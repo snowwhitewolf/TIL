@@ -11,6 +11,8 @@ for i in range(T):
     #이중 리스트로 숫자열을 저장
     num_list.append(num)
 
+
+
 for t in range(T):
     print(f'#{t+1}',end = ' ')
     #숫자열을 오름차순 정렬한 후 리스트를 풀어서 출력
