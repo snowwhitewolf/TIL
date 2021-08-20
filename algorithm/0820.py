@@ -1,44 +1,18 @@
-import time
+for t in range(int(input())):
+    h , w = map(int,input().split())
+    d = []
+    for i in range(h):
+        d.append(list(map(int,input().split())))
+    ans = 0
+    total = []
+    for y in range(h):
+        for x in range(w):
+            total = []
+            for yy in range(h-y):
+                for xx in range(w-x):
+                    total.append(d[y+yy][x+xx])
+            print(total)
+            if sum(total) > ans:
+                ans = sum(total)
 
-def map_print(ny,nx): # @
-    for i in range(100): print(end = ' ')
-    print()
-    for y in range(7):
-        for x in range(10) :
-            if (y,x) == (ny,nx):
-                print("@",end='')
-            else :
-                print(MAP[y][x],end ='')
-        print()
-
-    time.sleep(0.7)
-
-def dfs(y,x):
-    if MAP[y][x] == '#': return
-    if visited[y][x] == 1 : return
-    visited[y][x] = 1
-    map_print(y,x)
-    dfs(y-1,x)
-    map_print(y, x)
-    dfs(y+1,x)
-    map_print(y, x)
-    dfs(y,x-1)
-    map_print(y, x)
-    dfs(y,x+1)
-    map_print(y, x)
-    return
-
-MAP = [
-    "##########",
-    "#_#___#__#",
-    "#_#_#_#_##",
-    "#_#_#_#__#",
-    "#_#_#_#_##",
-    "#___#____#",
-    "##########",
-]
-visited = [
-    [0 for _ in range(10)] for _ in range(7)
-]
-
-dfs(1,1)
+    print(ans)
