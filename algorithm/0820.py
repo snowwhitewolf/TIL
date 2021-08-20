@@ -8,7 +8,7 @@ def dfs(now):
     dfs(left[now])
     dfs(right[now])
     return
-
+sdf
 
 left = [-1 for _ in range(100)]
 right = [-1 for _ in range(100)]
