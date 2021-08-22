@@ -1,10 +1,22 @@
-# Alice가 시작
-# x가 2x 또는 2x+1
-# 두 선택지의 차이가 크지 않음
-# x가 10이면 6이상 만들면 승리
-#
-for i in range(1 << 5):
-        for j in range(5):
-            if i & (1<<j):
-                print(j,end = ' ')
-        print()
+for t in range(int(input())):
+    N = int(input())
+    lst = []
+    num = ''
+    if N <= 20:
+        lst = list(input().split())
+        num += ''.join(lst)
+    elif N%20 == 0:
+        for x in range(N//20):
+            lst = list(input().split())
+            num += ''.join(lst)
+    else:
+        for x in range(N//20+1):
+            lst = list(input().split())
+            num += ''.join(lst)
+    i = 0
+    while True:
+        if str(i) in num:
+            i += 1
+        else:
+            break
+    print('#{} {}'.format(t + 1, i))
