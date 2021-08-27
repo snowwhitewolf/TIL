@@ -1,0 +1,10 @@
+left = [0]*10
+right = []*10
+left[1] = 3
+left[5] = 7
+left[7] = 9
+left[9] = 10
+right[1] = 5
+right[3] = 6
+right[5] = 8
+right[8] = 4
