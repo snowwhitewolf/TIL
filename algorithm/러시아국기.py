@@ -39,5 +39,3 @@ for t in range(int(input())):
         for j in range(i,r_limit+1):
             res = min(res,color(lst,i,j))
     res += cnt
-    print(res)
-
