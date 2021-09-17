@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>INDEX</h1>
+<hr>
+
+{% for movie in movies %}
+<div class="border border-primary border-5 my-3 px-2">
+<br>
+<h3>
+<a class="text-decoration-none text-light" href="{% url 'community:detail' movie.pk %}">- {{movie.movie_title}}</a>
+</h3>
+<br>
+</div>
+{% endfor %}
+
+{% endblock content %}
