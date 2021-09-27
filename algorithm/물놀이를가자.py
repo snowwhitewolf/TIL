@@ -5,7 +5,7 @@ dc = [0,0,1,-1]
 for t in range(int(input())):
     N,M = map(int,input().split())
     arr = [input() for _ in range(N)]
-    dist = [[987654321] * M for _ in range(N)]   
+    dist = [[987654321] * M for _ in range(N)]
 
     Q = deque()
 
