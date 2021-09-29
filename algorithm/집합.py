@@ -1,8 +1,8 @@
 import sys
+sys.stdin = open("text.txt","r")
 T = int(sys.stdin.readline())
 
 S = 1 << 21
-de = -1
 for _ in range(T):
     temp = sys.stdin.readline().split()
     if len(temp) == 2:
