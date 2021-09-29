@@ -23,14 +23,18 @@ for t in range(int(input())):
             for i in range(4):
                 nextx = x + dx[i]
                 nexty = y + dy[i]
-                if 0 <= nextx < w and 0 <= nexty < h:
-                    if lst[nexty][nextx] != '#' and visited[nexty][nextx] == 0:
-                        queue.append((nexty, nextx))
-                        visited[nexty][nextx] = visited[y][x] + 1
-                    if lst[nexty][nextx] == str(num):
-                        stx = nextx
-                        sty = nexty
-                        return visited[nexty][nextx]
+                if nexty < 0 or nextx < 0 or nexty >= h or nextx >=w:
+                    continue
+                if lst[nexty][nextx] == '#':
+                    continue
+                if visited[nexty][nextx] != 0:
+                    continue
+                queue.append((nexty, nextx))
+                visited[nexty][nextx] = visited[y][x] + 1
+                if lst[nexty][nextx] == str(num):
+                    stx = nextx
+                    sty = nexty
+                    return visited[nexty][nextx]
     for k in range(1,n+1):
         cnt += bfs(sty,stx,k)
     print('#{} {}'.format(t + 1, cnt))
