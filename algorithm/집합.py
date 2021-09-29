@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open("text.txt","r")
+sys.stdin = open("input.txt", "r")
 T = int(sys.stdin.readline())
 
 S = 1 << 21
