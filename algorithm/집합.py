@@ -1,19 +1,28 @@
-x = [0]*21
-m = int(input())
-for _ in range(m):
-    com = list(input().split())
-    if com[0] == 'add':
-        x[int(com[1])] = 1
-    elif com[0] == 'remove':
-        x[int(com[1])] = 0
-    elif com[0] == 'check':
-        print(x[int(com[1])])
-    elif com[0] == 'toggle':
-        if x[int(com[1])] == 0:
-            x[int(com[1])] =1
+import sys
+T = int(sys.stdin.readline())
+
+S = 1 << 21
+de = -1
+for _ in range(T):
+    temp = sys.stdin.readline().split()
+    if len(temp) == 2:
+        cmd = temp[0]
+        x = int(temp[1])
+    else :
+        cmd = temp[0]
+
+    if cmd == "add":
+        S |= (1<<x)
+    elif cmd == "remove":
+        S &= ~(1<<x)
+    elif cmd == "check":
+        if S & (1<<x)==0:
+            print(0)
         else:
-            x[int(com[1])] = 0
-    elif com[0] == 'all':
-        x = [1]*21
-    elif com[0] == 'empty':
-        x = [0] * 21
+            print(1)
+    elif cmd == "toggle":
+        S ^= (1<<x)
+    elif cmd == "all":
+        S = 1 << 21 -1
+    elif cmd == "empty":
+        S = 1 << 21
