@@ -1,6 +1,9 @@
 for t in range(int(input())):
     n = float(input())
-    res = ''
+    res = []
+    def f(num,res):
+        if num == 1.0:
+            return res
     while len(res)<=13:
         n *= 2
         if n > 1:
