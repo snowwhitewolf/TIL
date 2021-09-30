@@ -2,16 +2,16 @@ import sys
 sys.stdin = open("input.txt", "r")
 
 solve = {
-    '0001101' : 0,
-    '0011001' : 1,
-    '0010011' : 2,
-    '0111101' : 3,
-    '0100011' : 4,
-    '0110001' : 5,
-    '0101111' : 6,
-    '0111011' : 7,
-    '0110111' : 8,
-    '0001011' : 9
+    '211':0,
+    '221':1,
+    '122':2,
+    '411':3,
+    '132':4,
+    '231':5,
+    '114':6,
+    '312':7,
+    '213':8,
+    '112':9
 }
 MAP = {
     '0' : '0000',
@@ -31,43 +31,48 @@ MAP = {
     'E' : '1110',
     'F' : '1111',
 }
+def func(f3, f2, f1):
+    a = min(f3,f2,f1)
+    f1 //= a
+    f2 //= a
+    f3 //= a
+    return str(f3)+str(f2)+str(f1)
 
-for t in range(1,int(input())+1):
-    N,M = map(int,input().split())
-    code = set()
-    res = []
-    for _ in range(N):
-        a = input().strip('0')
-        if a and a not in code:
-            code.add(a)
-    print(code)
-    # print(bin(int(code[0],16)).rstrip('0'))
-    # pw = ''
-    # pw2 = []
-    # for y in range(N):
-    #     if len(pw2):
-    #         break
-    #     for x in range(0,M):
-    #         if code[y][x] != '0':
-    #             pw2.append(code[y][x])
-    #         if code[y][x]=='0' and len(pw2):
-    #             break
-    # for i in range(len(pw2)):
-    #     pw += MAP[pw2[i]]
-    # for x in range(len(pw) - 1, -1, -1):
-    #     if pw[x] == '1':
-    #         if len(pw[0:x + 1]) >=56:
-    #             pw = pw[x-55:x+1]
-    #         else:
-    #             pw= pw[0:x + 1]
-    #             pw = '0' * (56 - len(pw)) + pw
-    #         break
-    # for i in range(0,56,7):
-    #     res.append(solve[pw[i:i+7]])
-    #
-    # a = (res[0] + res[2] + res[4] + res[6])*3 + \
-    #         (res[1]+res[3]+res[5]) + res[7]
-    # if not a % 10:
-    #     print('#{} {}'.format(t,sum(res)))
-    # else:
-    #     print('#{} 0'.format(t))
+for t in range(int(input())):
+    N, M = map(int, input().split())
+    code = [input() for _ in range(N)]
+    lst = [''] * N
+    for y in range(N):
+        for x in range(M):
+            lst[y] += MAP[code[y][x]]
+    result = []
+    visited = []
+    res = 0
+    for y in range(N):
+        f1 = 0
+        f2 = 0
+        f3 = 0
+        for x in range(M*4-1, -1, -1):
+            if f2 == 0 and f3 == 0 and lst[y][x] == '1':
+                f1 += 1
+            elif f1 > 0 and f3 == 0 and lst[y][x] == '0':
+                f2 += 1
+            elif f1 > 0 and f2 > 0 and lst[y][x] == '1':
+                f3 += 1
+
+            if f1 and f2 and f3 and lst[y][x] == '0':
+                result.append(solve[func(f3, f2, f1)])
+                f1 = 0
+                f2 = 0
+                f3 = 0
+
+            if len(result) == 8:
+                result = result[::-1]
+                value = (result[0] + result[2] + result[4] + result[6]) * 3 + \
+                        (result[1] + result[3] + result[5]) + result[7]
+                if value % 10 == 0 and result not in visited:
+                    res += sum(result)
+                visited.append(result)
+                result = []
+
+    print('#{} {}'.format(t+1, res))
