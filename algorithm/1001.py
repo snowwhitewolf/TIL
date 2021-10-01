@@ -1,13 +1,2 @@
-n = int(input())
-
-def dice(num,s):
-    if num == n:
-        print(s)
-        return
-    for i in range(1,7):
-        if str(i) in s:
-            continue
-        else:
-            dice(num+1,s+str(i))
-
-dice(0,'')
+arr = [(1,6),(3,8),(8,9),(2,4),(2,5),(2,1),(2,3) ,(4,6),(7,9)]
+print(sorted(arr, key = lambda x: x[1]))
