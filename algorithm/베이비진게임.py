@@ -1,31 +1,28 @@
 import sys
 sys.stdin = open('input.txt',"r")
 
-for t in range(1,int(input())+1):
-    num = '0123456789'
-    lst = list(input().split())
+def func(p):
+    for j in range(10):
+        if p[j] == 3:
+            return True
+    for k in range(8):
+        if p[k] and p[k + 1] and p[k + 2]:
+            return True
+    return False
+for t in range(1, int(input()) + 1):
+    card = list(map(int, input().split()))
+    p1 = [0] * 10
+    p2 = [0] * 10
     res = 0
-    a = []
-    b = []
-    for i in range(0,12,2):
-        a.append(lst[i])
-        b.append(lst[i+1])
-    def func(lst):
-        n = sorted(lst)
-        aa = ''
-        for i in range(len(n)):
-            aa += n[i]
-        for i in range(0,len(n)-2):
-            if aa[i:i+3] in num:
-                return True
-            if aa.count(aa[i]) >= 3:
-                return True
-        return False
-    for j in range(3,12):
-        if func(a[:i]):
-            res = 1
-            break
-        if func(b[:i]):
-            res = 2
-            break
+    for i in range(12):
+        if not i % 2:
+            p1[card[i]] += 1
+            if func(p1):
+                res = 1
+                break
+        else:
+            p2[card[i]] += 1
+            if func(p2):
+                res = 2
+                break
     print('#{} {}'.format(t,res))
