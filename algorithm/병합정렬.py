@@ -1,37 +1,51 @@
-lst = [4,7,2,1,8,5]
+import sys
+sys.stdin = open("input.txt","r")
 
-def merge_sort(s, e ):
-    if s == e :
-        return
-    mid = (s + e ) // 2
-    merge_sort(s,mid) # 왼쪽 부분 정렬
-    merge_sort(mid+1, e) # 오른쪽 부분 정렬
 
-    # merge 해주기
-    # left [s~mid]     [s : mid + 1]    / right [mid+1 ~ e]     [mid + 1 : e + 1]
-    a = s
-    b = mid+1
-    res = []
-    while a <= mid and b <= e :
-        if lst[a] <= lst[b] :
-            res.append(lst[a])
-            a += 1
-        elif lst[b] < lst[a] :
-            res.append(lst[b])
-            b += 1
-    while a <= mid :
-        res.append(lst[a])
-        a += 1
-    while b <= e :
-        res.append(lst[b])
-        b += 1
+def merge(lst1, lst2):
+    global cnt
+    s1 = 0
+    s2 = 0
+    e1 = len(lst1)
+    e2 = len(lst2)
+    res = [0]*(e1+e2)
+    now = 0
+    if lst1[-1] > lst2[-1]:
+        cnt += 1
+    while s1 < e1 or s2 < e2:
+        if s1 < e1 and s2 < e2:
+            if lst1[s1] < lst2[s2]:
+                res[now] = lst1[s1]
+                now += 1
+                s1 += 1
+            else:
+                res[now] = lst2[s2]
+                now += 1
+                s2 += 1
+        else:
+            if s1 < e1:
+                res[now] = lst1[s1]
+                now += 1
+                s1 += 1
+            else:
+                res[now] = lst2[s2]
+                now += 1
+                s2 += 1
+    return res
 
-    # res -> lst 에 복사
-    t = 0
-    for i in range(s, e + 1) : # [s ~ e]
-        lst[i] = res[t]
-        t += 1
 
-    print(lst[s:e + 1])
+def div(lst):
+    if len(lst) == 1:
+        return lst
+    mid = len(lst) // 2
+    lst1 = div(lst[:mid])
+    lst2 = div(lst[mid:])
+    return merge(lst1, lst2)
 
-merge_sort(0,5) # [s ~ e]
+
+
+for t in range(1,int(input())+1):
+    N = int(input())
+    lst = list(map(int,input().split()))
+    cnt = 0
+    print('#{} {} {}'.format(t,div(lst)[N//2],cnt))
