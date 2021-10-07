@@ -1,13 +1,14 @@
 def func(level,cost,v):
     global res
+    if cost > res:
+        return
     if level == N:
         if res > cost:
             res = cost
         return
 
     for i in range(N):
-        if cost > res:
-            break
+
         if str(i) in v:
             continue
         func(level+1,cost+lst[level][i],v+f'{i}')
