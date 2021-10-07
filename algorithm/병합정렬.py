@@ -11,6 +11,9 @@ def merge(lst1, lst2):
     res = [0]*(e1+e2)
     now = 0
     if lst1[-1] > lst2[-1]:
+        print(lst1)
+        print(lst2)
+        print()
         cnt += 1
     while s1 < e1 or s2 < e2:
         if s1 < e1 and s2 < e2:
@@ -47,5 +50,6 @@ def div(lst):
 for t in range(1,int(input())+1):
     N = int(input())
     lst = list(map(int,input().split()))
+    print(lst)
     cnt = 0
     print('#{} {} {}'.format(t,div(lst)[N//2],cnt))
