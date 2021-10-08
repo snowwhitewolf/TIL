@@ -9,9 +9,9 @@ def func(idx,y, x, num):
         if 0 <= ny < N and 0 <= nx < N and MAP[ny][nx]-MAP[y][x] == 1:
             if cnt <= num+1:
                 if cnt == num+1:
-                    start = min(start, idx)
+                    start = min(start,idx)
                 else:
-                    start = MAP[y][x]
+                    start = idx
                 cnt = num + 1
             func(idx,ny, nx, num + 1)
 
