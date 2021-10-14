@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open("input.txt",'r')
+sys.stdin = open("../1014/input.txt", 'r')
 
 dirs = [[-1, 1],[1, 1],[1, -1],[-1, -1]]
 
