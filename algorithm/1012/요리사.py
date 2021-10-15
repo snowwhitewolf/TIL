@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open('../1014/input.txt', 'r')
+sys.stdin = open('../1015/input.txt', 'r')
 
 
 def point(s):
