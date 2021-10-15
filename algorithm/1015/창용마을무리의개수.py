@@ -1,13 +1,29 @@
 import sys
-sys.stdin = open('input.txt','r')
+sys.stdin = open("text.txt","r")
 
-for t in range(int(input())):
-    N,M = map(int,input().split())
-    person = [0]*(N+1)
-    cnt = 1
-    lst = [[]]*N
-    for i in range(M):
-        a,b = map(int,input().split())
-        for j in range(len(lst)):
-            if a in lst[j]
-    print(person)
+def Find(a) :
+    if parent[a] == a :return a
+    ret = Find(parent[a])
+    parent[a] = ret
+    return ret
+
+def Union(a,b):
+    global group_cnt
+    pa = Find(a)
+    pb = Find(b)
+    if pa != pb :
+        group_cnt -= 1
+        parent[pb] = pa
+    return
+
+T = int(input())
+
+for tc in range(1,T+1):
+    N,M = map(int ,input().split())
+    parent = [i for i in range(N+1)]
+    group_cnt = N
+
+    for _ in range(M) :
+        a,b = map(int ,input().split())
+        Union(a,b)
+    print("#{} {}".format(tc, group_cnt))
