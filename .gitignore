@@ -1,6 +1,6 @@
 # Created by https://www.toptal.com/developers/gitignore/api/jupyternotebooks,visualstudiocode,python,django,vuejs,pycharm
 # Edit at https://www.toptal.com/developers/gitignore?templates=jupyternotebooks,visualstudiocode,python,django,vuejs,pycharm
-
+secret.json
 ### Django ###
 *.log
 *.pot
