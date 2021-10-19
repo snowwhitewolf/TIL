@@ -20,7 +20,7 @@ def first(man):
             first_MAP[y][x] = cnt
     for y in range(N):
         for x in range(N):
-            if first_MAP[y][x] == max_cnt:
+            if first_MAP[y][x] == max_cnt and MAP[y][x]==0:
                 total.append([y,x])
     return total
 
@@ -42,7 +42,7 @@ def second(lst):
         max_cnt = max(cnt, max_cnt)
         lst[i].append(cnt)
     for i in range(len(lst)):
-        if lst[i][2] == max_cnt:
+        if lst[i][2] == max_cnt and MAP[lst[i][0]][lst[i][1]]==0:
             second_MAP.append(lst[i][0:2])
     return second_MAP
 
@@ -64,7 +64,6 @@ for man in lst[1:]:
     y = p[0][0]
     x = p[0][1]
     MAP[y][x] = man
-print(MAP)
 for y in range(N):
     for x in range(N):
         cnt = 0
@@ -72,6 +71,8 @@ for y in range(N):
             bfy = y+dy[d]
             bfx = x+dx[d]
             if 0<= bfy < N and 0<= bfx < N:
-               cnt += 1
-        res += 10**(cnt-1)
+                if MAP[bfy][bfx] in like[f'{MAP[y][x]}']:
+                    cnt += 1
+        if cnt != 0:
+            res += 10**(cnt-1)
 print(res)
