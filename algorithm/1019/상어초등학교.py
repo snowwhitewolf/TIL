@@ -44,7 +44,7 @@ def second(lst):
     for i in range(len(lst)):
         if lst[i][2] == max_cnt and MAP[lst[i][0]][lst[i][1]]==0:
             second_MAP.append(lst[i][0:2])
-    return second_MAP
+            return second_MAP
 
 
 N = int(input())
