@@ -6,10 +6,16 @@
 {% for article in person.article_set.all %}
 <div>제목 : {{article.title}}</div>
 <p>좋아요 수 : {{article.like_users.count}}</p>
+<hr>
 {% endfor %}
 {% if user != person %}
 <div>
+
+<h2>follower</h2>
 <p>팔로워 수 : {{person.followers.all|length}}</p>
+{% for person in person.followers.all %}
+<p>{{person.username}}</p>
+{% endfor %}
 <form action="{% url 'accounts:follow'  person.pk %}" method="POST">
 {% csrf_token %}
 {% if user in person.followers.all %}
