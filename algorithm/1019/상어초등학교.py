@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open('../1023/input.txt', 'r')
+sys.stdin = open('../1025/input.txt', 'r')
 
 def first(man):
     total = []

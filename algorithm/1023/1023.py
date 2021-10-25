@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open('input.txt','r')
+sys.stdin = open('input.txt', 'r')
 
 a,b,c, = map(int,input().split())
 
