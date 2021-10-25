@@ -1,9 +1,11 @@
 import sys
 sys.stdin = open('input.txt', 'r')
 
-res = []
+res = [0]*10001
 for t in range(int(input())):
-    res.append(int(input()))
-res.sort()
-for i in range(len(res)):
-    print(res[i])
+    n = int(input())
+    res[n]+= 1
+for i in range(1,10001):
+    if res[i]:
+        for _ in range(res[i]):
+            print(i)
