@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open('input.txt', 'r')
+sys.stdin = open('../1026/input.txt', 'r')
 
 for t in range(int(input())):
     A,B = map(int,input().split())
