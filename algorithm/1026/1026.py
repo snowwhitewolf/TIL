@@ -37,12 +37,13 @@ def find_block(y,x):
                 rain += 1
             block.append([ny,nx])
             find_block(ny,nx)
-    if len(block) >= len(big_block):
-        if len(block) == len(big_block):
-            if rain > max_rain:
-                max_rain = rain
-                big_block = block
+    if len(block) > len(big_block):
         big_block = block
+        return
+    if len(block) == len(big_block):
+        if rain > max_rain:
+            max_rain = rain
+            big_block = block
     return
 
 def gravity(MAP):
@@ -86,10 +87,10 @@ while True:
     max_rain = 0
     for y in range(N):
         for x in range(N):
+            if [y,x] in big_block:
+                continue
             n = MAP[y][x]
             if n <= 0:
-                continue
-            if [y,x] in big_block:
                 continue
             rain = 0
             block = []
@@ -99,17 +100,14 @@ while True:
 ##### 블럭크기가 1이면 종료
     if len(big_block)< 2:
         break
-
 ##### 블럭 삭제
     delete(big_block)
-
 ##### 점수 증가
     res += len(big_block)**2
 ##### 중력 작용
     gravity(MAP)
-
     MAP = turn()
 ##### 중력 작용
     gravity(MAP)
-    print(res)
+
 print(res)
