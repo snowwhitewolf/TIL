@@ -1,2 +1,6 @@
-print('강한친구 대한육군')
-print('강한친구 대한육군')
+A,B = map(int,input().split())
+print(A+B)
+print(A-B)
+print(A*B)
+print(A//B)
+print(A%B)
