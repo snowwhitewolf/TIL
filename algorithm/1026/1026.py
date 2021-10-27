@@ -41,7 +41,7 @@ def find_block(y,x):
         big_block = block
         return
     if len(block) == len(big_block):
-        if rain > max_rain:
+        if rain >= max_rain:
             max_rain = rain
             big_block = block
     return
