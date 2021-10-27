@@ -1,17 +1,5 @@
-N = int(input())
-lst = []
-for _ in range(N):
-    lst.append(input())
-res = ''
-
-for i in range(len(lst[0])):
-    k = 0
-    for j in range(1,N):
-        if lst[j][i] != lst[0][i]:
-            res += '?'
-            k = 1
-            break
-    if k == 0:
-        res += lst[0][i]
-
-print(res)
+N, M = map(int,input().split())
+brand = []
+for _ in range(M):
+    brand.append(list(map(int,input().split())))
+print(brand)
