@@ -1,12 +1,17 @@
-N = input()
-if len(N)== 1:
-    N = '0' + N
-N2 = N
-cnt = 0
-while True:
-    num = int(N2[0]) + int(N2[1])
-    N2 = N[1] + str(num)
-    cnt += 1
-    if  N == N2:
-        print(cnt)
-        break
+N = int(input())
+lst = []
+for _ in range(N):
+    lst.append(input())
+res = ''
+
+for i in range(len(lst[0])):
+    k = 0
+    for j in range(1,N):
+        if lst[j][i] != lst[0][i]:
+            res += '?'
+            k = 1
+            break
+    if k == 0:
+        res += lst[0][i]
+
+print(res)
