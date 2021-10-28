@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open('../1026/input.txt', 'r')
+sys.stdin = open('../1028/input.txt', 'r')
 import sys
 res = [0]*10001
 for t in range(int(input())):

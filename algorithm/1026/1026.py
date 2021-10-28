@@ -21,7 +21,7 @@ y,x 작은순
 
 
 import sys
-sys.stdin = open('input.txt','r')
+sys.stdin = open('../1028/input.txt', 'r')
 
 def find_block(y,x):
     global big_block, max_rain, rain
