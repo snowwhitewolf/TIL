@@ -1,6 +1,3 @@
-import sys
-sys.stdin = open('input.txt','r')
-
 #다음 세대 변환 함수
 def gen(lst):
     new_lst = lst[::-1]
