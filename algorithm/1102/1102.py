@@ -11,13 +11,10 @@ for i in range(M):
     MAP[y-1][x-1].append(z)
 dy = [-1,-1,-1,0,0,1,1,1]
 dx = [-1,0,1,1,-1,-1,0,1]
-
 for _ in range(K):
     #봄
     for y in range(N):
         for x in range(N):
-            if len(MAP[y][x]) == 0:
-                continue
             MAP[y][x].sort()
             for n in range(len(MAP[y][x])):
                 if MAP[y][x][n] <= A[y][x]:
@@ -27,20 +24,18 @@ for _ in range(K):
                 else:
                     DEAD[y][x] += MAP[y][x][n]//2
                     MAP[y][x][n] = 0
-    for y in range(N):
-        for x in range(N):
-            if 0 in MAP[y][x]:
-                MAP[y][x].remove(0)
+
     #여름
     for y in range(N):
         for x in range(N):
             A[y][x] += DEAD[y][x]
-
     #가을
     for y in range(N):
         for x in range(N):
+            while 0 in MAP[y][x]:
+                MAP[y][x].remove(0)
             for n in range(len(MAP[y][x])):
-                if MAP[y][x][n] and MAP[y][x][n]%5==0:
+                if MAP[y][x][n]%5==0:
                     for d in range(8):
                         ny = y + dy[d]
                         nx = x + dx[d]
@@ -51,6 +46,7 @@ for _ in range(K):
     for y in range(N):
         for x in range(N):
             A[y][x] += B[y][x]
+
 res = 0
 for y in range(N):
     for x in range(N):
