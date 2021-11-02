@@ -24,7 +24,8 @@ for _ in range(K):
                 else:
                     DEAD[y][x] += MAP[y][x][n]//2
                     MAP[y][x][n] = 0
-
+            while 0 in MAP[y][x]:
+                MAP[y][x].remove(0)
     #여름
     for y in range(N):
         for x in range(N):
@@ -32,8 +33,6 @@ for _ in range(K):
     #가을
     for y in range(N):
         for x in range(N):
-            while 0 in MAP[y][x]:
-                MAP[y][x].remove(0)
             for n in range(len(MAP[y][x])):
                 if MAP[y][x][n]%5==0:
                     for d in range(8):
@@ -41,7 +40,6 @@ for _ in range(K):
                         nx = x + dx[d]
                         if 0<= ny < N and 0<= nx < N:
                             MAP[ny][nx].append(1)
-
     #겨울
     for y in range(N):
         for x in range(N):
