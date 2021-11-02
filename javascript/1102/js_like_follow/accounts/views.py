@@ -1,3 +1,4 @@
+from django.http.response import JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login as auth_login
@@ -78,8 +79,13 @@ def follow(request, user_pk):
         if you != me:
             if you.followers.filter(pk=me.pk).exists():
                 you.followers.remove(me)
+                is_follow = False
             else:
                 you.followers.add(me)
-        return redirect('accounts:profile', you.username)
+                is_follow = True
+            data = {
+                'is_follow': is_follow,
+            }
+        # return redirect('accounts:profile', you.username)
+        return JsonResponse(data)
     return redirect('accounts:login')
-    

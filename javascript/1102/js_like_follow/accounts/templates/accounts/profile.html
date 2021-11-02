@@ -7,12 +7,12 @@
 <hr>
 팔로워 : {{ person.followers.all|length }} / 팔로잉 : {{ person.followings.all|length }}
 {% if user != person %}
-  <form action="{% url 'accounts:follow' person.pk %}" method="POST">
+  <form class='follow-form' data-pk = "{{ person.pk}}" action="{% url 'accounts:follow' person.pk %}" method="POST">
   {% csrf_token %}
   {% if user in person.followers.all %}
-    <button>팔로우 취소</button>
+    <button id='btn'>팔로우 취소</button>
   {% else %}
-    <button>팔로우</button>
+    <button id='btn'>팔로우</button>
   {% endif %}
   </form>
 {% endif %}
@@ -50,3 +50,46 @@
 </ul>
 
 {% endblock content %}
+
+{% block script %}
+<script>
+const form = document.querySelector('.follow-form')
+  form.addEventListener('submit', function (event) {
+    // submit 동작을 막기 위함 (새로고침 X)
+    event.preventDefault()
+    // article pk 값 가져오기
+    const pk = person.pk
+    // csrf token 값 가져오기 (django csrf document 참고)
+    const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value
+    // console.log(csrftoken)
+
+    // axios를 이용하여 비동기 요청
+    axios({
+      method: 'post',
+      url: `/accounts/${pk}/follow/`,
+      headers: {
+        'X-CSRFToken': csrftoken
+      }
+    })
+    .then(res => {
+      // 좋아요가 눌린 버튼을 선택한다.
+      const btn = document.querySelector('#btn')
+
+      // 버튼의 텍스트를 수정한다.
+      if (res.data.is_like) {
+        btn.innerText = '팔로우 취소'
+      } else {
+        btn.innerText = '팔로우'
+      }
+      // 좋아요 카운트 숫자를 변경
+      // txt.innerText = res.data.cnt_like
+    })
+    .catch(err => {
+      console.log(err)
+    })
+    
+  })
+
+  
+</script>
+{% endblock script %}
