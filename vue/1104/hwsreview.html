@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <h1>점심 메뉴</h1>
+    <button @click = 'getOne'> 선택하기 </button>
+    <p>{{pickmenu}}</p>
+    <hr>
+    <h1>로또</h1>
+    <button>선택하기</button>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src='https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js'></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        lunch: ['국밥', '짜장면', '피자', '치킨'],
+        pickmenu :'',
+      },
+      methods : {
+        getOne: function () {
+          this.pickmenu = _.sample(this.lunch)
+        }
+      }
+    })
+
+  </script>
+</body>
+</html>
