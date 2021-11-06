@@ -1,13 +1,9 @@
-import sys
-sys.stdin = open('input.txt','r')
-
 R,C,T = map(int,input().split())
 MAP = [list(map(int,input().split())) for _ in range(R)]
-sMAP = [[0]*C for _ in range(R)]
 dy = [0,0,1,-1]
 dx = [1,-1,0,0]
 LG1 = 0
-res = 0
+res = 2
 for y in range(R):
     if MAP[y][0] == -1:
         LG1 = y
@@ -15,9 +11,10 @@ for y in range(R):
 LG2 = LG1 + 1
 for _ in range(T):
     # 확산
+    sMAP = [[0] * C for _ in range(R)]
     for y in range(R):
         for x in range(C):
-            if MAP[y][x] > 0:
+            if MAP[y][x] > 4:
                 cnt = 0
                 for d in range(4):
                     ny = y + dy[d]
@@ -26,11 +23,10 @@ for _ in range(T):
                         sMAP[ny][nx] += MAP[y][x]//5
                         cnt += 1
                 MAP[y][x] -= (MAP[y][x]//5)*cnt
-
+    # 확산 추가
     for y in range(R):
         for x in range(C):
             MAP[y][x] += sMAP[y][x]
-    sMAP = [[0]*C for _ in range(R)]
     # 공기 청정기
     # 왼쪽
     for y in range(LG1-1,0,-1):
@@ -52,8 +48,7 @@ for _ in range(T):
         MAP[LG2][x] = MAP[LG2][x-1]
     MAP[LG1][1] = 0
     MAP[LG2][1] = 0
+
 for y in range(R):
-    for x in range(C):
-        if MAP[y][x] > 0:
-            res += MAP[y][x]
+        res += sum(MAP[y])
 print(res)
