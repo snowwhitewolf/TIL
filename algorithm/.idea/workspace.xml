@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="99ac58c3-de52-486e-9363-553412de5838" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/1111/1111.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1104/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/1111/input.txt" afterDir="false" />
-    </list>
+    <list default="true" id="99ac58c3-de52-486e-9363-553412de5838" name="Changes" comment="1111" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,6 +71,14 @@
       <option name="presentableId" value="Default" />
       <updated>1636164629801</updated>
     </task>
+    <task id="LOCAL-00001" summary="1111">
+      <created>1636633993758</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1636633993758</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -87,5 +91,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1111" />
+    <option name="LAST_COMMIT_MESSAGE" value="1111" />
   </component>
 </project>
