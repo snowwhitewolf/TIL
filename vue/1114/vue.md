@@ -39,7 +39,7 @@ Server Side Rendering
 ```
 Model, View, View Model
 
-Model : Vue에서 Model dms JavaScript Object이다
+Model : Vue에서 Model은 JavaScript Object이다
 View : Vue 에서 View는 DOM이다
 ViewModel : Vue에서 ViewModel은 모든 Vue Instance이다
 ```
@@ -103,7 +103,7 @@ v- 접두사가 있는 특수 속성
 표현식의 값이 변경될 때 반응적으로 DOM에 적용하는 역할을 함
 
 전달인자(Arguments)
-':' 을 통해 전달인자를 받을 수 도 있음
+':' 을 통해 전달인자를 받을 수도 있음
 수식어(Modifiers)
 '.' 으로 표시되는 특수 접미사
 directive를 특별한 방법으로 바인딩 해야 함을 나타냄
