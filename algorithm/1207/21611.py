@@ -109,7 +109,7 @@ for k in range(M):
         lst.append(0)
 
     # 맵에 다시 대입
-    res = 0
+    res = 1
     d = 0
     cnt = 1
     y = shark
