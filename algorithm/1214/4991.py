@@ -1,8 +1,6 @@
 from collections import deque
 import sys
 sys.stdin = open('input.txt', 'r')
-
-
 def bfs(sy, sx):
     global yy, xx
     visited = [[0] * w for _ in range(h)]
@@ -23,7 +21,6 @@ def bfs(sy, sx):
                     visited[ny][nx] = visited[y][x] + 1
                     queue.append([ny, nx])
     return -1
-
 while True:
     w, h = map(int,input().split())
     if w == 0 and h == 0:
