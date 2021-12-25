@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99ac58c3-de52-486e-9363-553412de5838" name="Changes" comment="1225">
-      <change beforePath="$PROJECT_DIR$/14502.py" beforeDir="false" afterPath="$PROJECT_DIR$/14502.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1316.py" beforeDir="false" afterPath="$PROJECT_DIR$/1316.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,8 +41,8 @@
       <recent name="C:\Users\이종현\ssafy_6\TIL\algorithm\1111" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.4991">
-    <configuration name="16235" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.1316">
+    <configuration name="1316" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="algorithm" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -50,11 +50,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/1204" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/1204/16235.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/1316.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -149,11 +149,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.1316" />
         <item itemvalue="Python.4991" />
         <item itemvalue="Python.1978" />
         <item itemvalue="Python.21611" />
         <item itemvalue="Python.1965" />
-        <item itemvalue="Python.16235" />
       </list>
     </recent_temporary>
   </component>
@@ -376,7 +376,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640442388963</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="1225">
+      <created>1640443160814</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1640443160814</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
