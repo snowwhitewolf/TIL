@@ -27,6 +27,13 @@
 
   
 
-## 리액트
+## JavaScript, TypeScript
 
-- 리액트
+#### JavaScript
+
+- 브라우저에서 쓰이는 단 하나의 프로그래밍 언어
+
+#### TypeScript
+
+- JavaScript의 문제점 보완한 언어(Type 규칙)
+- 코드가 예측 가능하고 읽기 쉬워짐
