@@ -37,3 +37,26 @@
 
 - JavaScript의 문제점 보완한 언어(Type 규칙)
 - 코드가 예측 가능하고 읽기 쉬워짐
+
+
+
+## 명령어 정리
+
+- 프로젝트 생성
+
+```bash
+$npx create-react-app 프로젝트이름 --template typescript
+$npm i --save react react-dom typescript
+$npm i --save-dev @types/react @types/react-dom @types/node
+```
+
+- 라이브러리 설치
+
+```bash
+$npm i --save react react-dom typescript
+$npm i --save-dev @types/react @types/react-dom @types/node
+```
+
+#### npm, npx 차이점
+
+- npx는 일회용
