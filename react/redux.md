@@ -4,3 +4,8 @@
 - state 변경 관리
 - props 사용하지 않기 위해 사용
 - store에 모든 state(변수) 저장 및 관리
+
+
+
+## store
+
