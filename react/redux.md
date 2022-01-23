@@ -9,3 +9,9 @@
 
 ## store
 
+
+
+## reducer
+
+
+
