@@ -7,7 +7,7 @@ for t in range(10):
     for i in range(N):
         if len(lst[i]) == 2:
             tree[int(lst[i][0])] = int(lst[i][1])
-    for i in range(N,0,-1):
+    for i in range(N, 0, -1):
         if tree[i] == 0:
             if lst[i-1][1] == '+':
                 tree[i] = tree[int(lst[i-1][2])] + tree[int(lst[i-1][3])]
