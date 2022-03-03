@@ -12,9 +12,13 @@
 
 state를 저장하는 곳
 
+
+
 ## reducer
 
 state를 변경시키는 것
+
+
 
 ## action
 
