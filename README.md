@@ -1,20 +1,21 @@
 # TIL (🎓Today I Learn)
 
-- 1day 1commit
-- 매일 공부하기
+- 1 day 1 commit
 
 
 
-Python
+**Python**
 
-HTML/CSS
+**HTML/CSS**
 
-JavaScript
+**JavaScript**
 
-Django
+**Django**
 
-Vue
+**Vue**
 
-React
+**React**
 
-Algorithm
+**Algorithm**
+
+**BigData**
