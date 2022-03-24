@@ -4,7 +4,7 @@
 
 
 
-**Python**
+[**Python**](python)
 
 **HTML/CSS**
 
@@ -19,3 +19,5 @@
 **Algorithm**
 
 **BigData**
+
+[](algorithm)
