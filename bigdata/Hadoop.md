@@ -24,9 +24,3 @@ Scale-up
 
 Project/src 디렉토리에 있는 Driver.java 파일에 아래 라인을 넣는다.
 
-
-
-## Hadoop
-
-
-
