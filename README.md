@@ -6,18 +6,16 @@
 
 [**Python**](python)
 
-**HTML/CSS**
+[**HTML/CSS**](web)
 
-**JavaScript**
+[**JavaScript**](javascript)
 
-**Django**
+[**Django**](django)
 
-**Vue**
+[**Vue**](vue)
 
-**React**
+[**React**](react)
 
-**Algorithm**
+[**Algorithm**](algorithm)
 
-**BigData**
-
-[](algorithm)
+[**BigData**](bigdata)
