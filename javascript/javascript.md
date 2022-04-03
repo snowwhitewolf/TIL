@@ -1,11 +1,15 @@
 # JavaScript
 
+
+
 ##  javascript의 필요성
 
 ```
 브라우저 화면을 동적으로 만들기 위함
 브라우저를 조작할 수 있는 유일한 언어
 ```
+
+
 
 ## DOM
 
@@ -34,6 +38,8 @@ Document.createElement() : 작성한 태그명의 HTML 요소를 생성하여 �
 Document.append() : 특정 부모 Node의 자식 NodeList중 마지막 자식 다음에 삽입, 여러 Node 객체와 문자열 추가, 반환 값 X
 Document.appendChild() : Node만 추가 가능, 한번에 하나의 Node만 추가 가능
 ```
+
+
 
 ## Event
 
@@ -85,6 +91,8 @@ Asynchronous JavaScript And XML(비동기식 JavaScript와 XML)
 Call Stack이 비면 Event Loop가 대기 줄에서 가장 오래된 이벤트를 Call Stack으로 보냄
 ```
 
+
+
 ### Callback function
 
 ```
@@ -103,6 +111,8 @@ callback Hell 해결
 4. Promise 콜백 방식 사용
 ```
 
+
+
 ### Promise
 
 ```
@@ -111,6 +121,8 @@ callback Hell 해결
 실패에 대한 약속 .catch()
 return 값이 반드시 있어야 함
 ```
+
+
 
 ## Axios
 
