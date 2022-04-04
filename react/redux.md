@@ -10,17 +10,17 @@
 
 ## store
 
-state를 저장하는 곳
+state를 저장하는 역할
 
 
 
 ## reducer
 
-state를 변경시키는 것
+state를 변경시키는 역할
 
 
 
 ## action
 
-reducer를 불러 오는것
+reducer를 불러 오는 역할
 
