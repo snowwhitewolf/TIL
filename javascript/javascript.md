@@ -1,7 +1,3 @@
-# JavaScript
-
-
-
 ##  javascript의 필요성
 
 ```
@@ -130,4 +126,3 @@ return 값이 반드시 있어야 함
 브라우저를 위한 Promise 기반의 클라이언트
 XHR 객체 대신 편리한 AJAX 요청이 가능하도록 도움
 ```
-
