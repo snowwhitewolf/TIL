@@ -24,7 +24,6 @@
   
   ```
   
-
 - 동작 시 클래스 추가
 
   ```typescript
@@ -54,6 +53,46 @@
       </div>
     );
   }
+  ```
+
+  
+
+- 스크롤 방지
+
+  ```javascript
+  useEffect(() => {
+    document.body.style.cssText = `
+      position: fixed; 
+      top: -${window.scrollY}px;
+      overflow-y: scroll;
+      width: 100%;`;
+    return () => {
+      const scrollY = document.body.style.top;
+      document.body.style.cssText = '';
+      window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
+    };
+  }, []);
+  ```
+
+  ```javascript
+  class Mypage extends React.Component {
+    constructor(props) {
+      super(props)
+      this.state = {
+        isModalOpen: false
+      }
+      //! 모달창 띄웠을 때 스크롤 방지
+      document.body.style.overflow = "hidden";
+    }
+  
+    handleModal = () => {
+      this.setState({
+        isModalOpen: !this.state.isModalOpen
+      })
+      // 스크롤 방지 해제
+      document.body.style.overflow = "unset"
+    }
+    ... 생략
   ```
 
   
