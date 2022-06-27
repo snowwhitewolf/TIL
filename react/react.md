@@ -59,3 +59,11 @@ $npm i --save-dev @types/react @types/react-dom @types/node
 #### npm, npx 차이점
 
 - npx는 일회용
+
+## 사용법
+
+```
+state 변경은 비동기 작업
+useEffect로 해결
+```
+
