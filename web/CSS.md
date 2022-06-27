@@ -188,3 +188,92 @@ fixed : 고정 위치
 - 스크롤 시에도 항상 같은 곳에 위치함
 ```
 
+
+
+## Modal
+
+```javascript
+// Modal.js
+import React from "react";
+ 
+function Modal(props) {
+ 
+function closeModal() {
+    props.closeModal();
+  }
+ 
+  return (
+    <div className="Modal" onClick={closeModal}>
+      <div className="modalBody" onClick={(e) => e.stopPropagation()}>
+        <button id="modalCloseBtn" onClick={closeModal}>
+          ✖
+        </button>
+        {props.children}
+      </div>
+    </div>
+  );
+}
+ 
+export default Modal;
+
+```
+
+```css
+/* modal창 외부화면 */
+.Modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ 
+/* modal창 */
+.modalBody {
+  position: absolute;
+  width: 300px;
+  height: 500px;
+  padding: 40px;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+}
+ 
+#modalCloseBtn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border: none;
+  color: rgba(0, 0, 0, 0.7);
+  background-color: transparent;
+  font-size: 20px;
+}
+ 
+#modalCloseBtn:hover {
+  cursor: pointer;
+}
+```
+
+- 외부 스크롤 방지
+
+```javascript
+useEffect(() => {
+  document.body.style.cssText = `
+    position: fixed; 
+    top: -${window.scrollY}px;
+    overflow-y: scroll;
+    width: 100%;`;
+  return () => {
+    const scrollY = document.body.style.top;
+    document.body.style.cssText = '';
+    window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
+  };
+}, []);
+
+```
+
