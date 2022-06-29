@@ -67,3 +67,8 @@ state 변경은 비동기 작업
 useEffect로 해결
 ```
 
+```
+조건문으로 클래스 변경하는 방법
+className={`carousel-button ${level === 1160 && "hidden"}`}
+```
+
